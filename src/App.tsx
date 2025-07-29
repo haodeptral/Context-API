@@ -16,7 +16,6 @@ function App() {
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
           <Navbar />
           <main className="p-4">
-            <ThemeSwitcher />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<LoginForm />} />
