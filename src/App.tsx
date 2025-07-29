@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
@@ -7,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 import LoginForm from './components/LoginForm';
 import PrivateRoute from './components/PrivateRoute';
 import { ThemeProvider } from './context/ThemeContext';
-import ThemeSwitcher from './components/ThemeSwitcher';
+
 
 function App() {
   return (
