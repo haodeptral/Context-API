@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
     const { user, logout } = useAuth();
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <nav className="bg-blue-600 text-white px-4 py-3 flex justify-between items-center">
@@ -13,6 +15,16 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-4">
+                <button
+                    onClick={toggleTheme}
+                    className="px-4 py-2 rounded bg-white dark:bg-gray-700 text-sm text-gray-800 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600 transition flex items-center gap-2 w-10 h-10 justify-center"
+                >
+                    {theme === 'light' ? (
+                        <i className="fa-solid fa-sun"></i>
+                    ) : (
+                        <i className="fa-solid fa-moon"></i>
+                    )}
+                </button>
                 {user ? (
                     <>
                         <span>Xin chào, <strong>{user.username}</strong></span>
